@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoboAPI Lab MVP</title>
+  <meta name="description" content="Laboratorio de APIs con IA para Robótica con FastAPI, Swagger, visión, navegación y agente inteligente." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">RoboAPI Lab</div>
+      <nav>
+        <a href="#overview">MVP</a>
+        <a href="#arquitectura">Arquitectura</a>
+        <a href="#endpoints">Endpoints</a>
+        <a href="#demo">Demo</a>
+        <a href="#deploy">Deploy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">GitHub Pages + FastAPI + Swagger</span>
+          <h1>Laboratorio de APIs con IA para Robótica</h1>
+          <p class="lead">MVP académico para integrar control robótico, telemetría, visión computacional, navegación y agente IA bajo una arquitectura documentada con OpenAPI/Swagger.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#demo">Probar demo</a>
+            <a class="btn secondary" href="../README.md">Ver repositorio</a>
+          </div>
+          <div class="chips">
+            <span>FastAPI</span>
+            <span>Swagger</span>
+            <span>ROS-ready</span>
+            <span>Vision AI</span>
+            <span>LLM-ready</span>
+            <span>GitHub Pages</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="terminal">
+            <div class="terminal-top">
+              <span></span><span></span><span></span>
+            </div>
+            <pre><code>GET    /health
+GET    /robots
+GET    /robots/{id}/status
+POST   /robots/{id}/move
+POST   /vision/detect
+POST   /navigation/goal
+POST   /agent/command
+GET    /logs/{robot_id}
+
+Swagger UI:
+/api/docs</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Resumen del MVP</span>
+          <h2>Qué contiene esta página de GitHub</h2>
+        </div>
+        <div class="grid cols-3">
+          <article class="card">
+            <h3>Backend API</h3>
+            <p>Servicio FastAPI con documentación Swagger automática, modelos Pydantic y endpoints listos para pruebas académicas y extensión industrial.</p>
+          </article>
+          <article class="card">
+            <h3>Robótica modular</h3>
+            <p>Capas separadas para telemetría, control, navegación, visión e inteligencia artificial, compatibles con integración posterior a ROS 2 y hardware real.</p>
+          </article>
+          <article class="card">
+            <h3>GitHub-ready</h3>
+            <p>Sitio estático para GitHub Pages que presenta el proyecto, permite configurar la URL del backend y ejecutar pruebas rápidas desde el navegador.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="arquitectura" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Arquitectura</span>
+          <h2>Flujo funcional del laboratorio</h2>
+        </div>
+        <div class="architecture">
+          <div class="node">Usuario / Investigador</div>
+          <div class="arrow">↓</div>
+          <div class="node">GitHub Pages Dashboard</div>
+          <div class="arrow">↓</div>
+          <div class="node">API Gateway · FastAPI</div>
+          <div class="row-nodes">
+            <div class="node small">Robots</div>
+            <div class="node small">Visión IA</div>
+            <div class="node small">Navegación</div>
+            <div class="node small">Agente LLM</div>
+            <div class="node small">Logs</div>
+          </div>
+          <div class="arrow">↓</div>
+          <div class="node">Robot físico / Simulado / Digital Twin</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="endpoints" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">OpenAPI</span>
+          <h2>Endpoints principales del MVP</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Método</th>
+                <th>Ruta</th>
+                <th>Función</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>GET</td><td>/health</td><td>Valida el estado general del backend.</td></tr>
+              <tr><td>GET</td><td>/robots</td><td>Lista robots registrados en el laboratorio.</td></tr>
+              <tr><td>GET</td><td>/robots/{id}/status</td><td>Devuelve estado, batería y telemetría del robot.</td></tr>
+              <tr><td>POST</td><td>/robots/{id}/move</td><td>Envía un comando de movimiento.</td></tr>
+              <tr><td>POST</td><td>/vision/detect</td><td>Simula detección de objetos mediante IA.</td></tr>
+              <tr><td>POST</td><td>/navigation/goal</td><td>Asigna una meta de navegación.</td></tr>
+              <tr><td>POST</td><td>/agent/command</td><td>Interpreta órdenes en lenguaje natural.</td></tr>
+              <tr><td>GET</td><td>/logs/{robot_id}</td><td>Consulta eventos y trazabilidad.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Demo conectada</span>
+          <h2>Prueba rápida desde esta página</h2>
+        </div>
+        <div class="grid cols-2">
+          <div class="card form-card">
+            <label for="apiBase">URL base del backend</label>
+            <div class="inline-form">
+              <input id="apiBase" type="text" placeholder="http://127.0.0.1:8000" />
+              <button id="saveApi" class="btn primary">Guardar</button>
+            </div>
+            <p class="muted">Sugerencia local: <code>http://127.0.0.1:8000</code></p>
+            <div class="action-grid">
+              <button class="btn secondary test-btn" data-endpoint="/health">GET /health</button>
+              <button class="btn secondary test-btn" data-endpoint="/robots">GET /robots</button>
+              <button id="swaggerBtn" class="btn secondary">Abrir Swagger</button>
+            </div>
+          </div>
+          <div class="card output-card">
+            <div class="output-head">Respuesta</div>
+            <pre id="output">Configura la URL del backend y ejecuta una prueba.</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="repo" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Estructura</span>
+          <h2>Organización recomendada del repositorio</h2>
+        </div>
+        <div class="grid cols-2">
+          <article class="card">
+            <pre><code>roboapi-lab/
+├── app/
+│   ├── main.py
+│   ├── models/
+│   ├── routers/
+│   └── services/
+├── docs/
+│   ├── index.html
+│   ├── styles.css
+│   └── app.js
+├── tests/
+├── docker-compose.yml
+├── Dockerfile
+└── README.md</code></pre>
+          </article>
+          <article class="card">
+            <h3>Uso sugerido</h3>
+            <p>El backend se ejecuta en FastAPI y la documentación se sirve desde <code>/docs</code>. La página estática en la carpeta <code>docs/</code> se publica directamente con GitHub Pages para presentar el MVP y consumir la API desplegada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="deploy" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Despliegue</span>
+          <h2>Cómo publicarlo en GitHub Pages</h2>
+        </div>
+        <div class="grid cols-2">
+          <article class="card">
+            <h3>Página estática</h3>
+            <ol>
+              <li>Sube el repositorio a GitHub.</li>
+              <li>Ve a <strong>Settings → Pages</strong>.</li>
+              <li>Selecciona la rama principal y la carpeta <strong>/docs</strong>.</li>
+              <li>Guarda y publica.</li>
+            </ol>
+          </article>
+          <article class="card">
+            <h3>Backend</h3>
+            <ol>
+              <li>Despliega FastAPI en Render, Railway, Fly.io o un VPS.</li>
+              <li>Habilita CORS para tu dominio de GitHub Pages.</li>
+              <li>Copia la URL base en el campo de demo de esta página.</li>
+            </ol>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>RoboAPI Lab MVP</strong>
+        <p>Laboratorio de APIs con IA para Robótica con enfoque académico, modular y escalable.</p>
+      </div>
+      <a class="btn secondary" href="../docs/arquitectura.md">Arquitectura técnica</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
